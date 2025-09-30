@@ -104,9 +104,6 @@ def download(url):
 
 def move_dload_file(dnow):
 
-    dnow = dt.now().strftime('%Y%m%d')
-    print(f"dnow: {dnow}")
-
     was = f"/home/ray/Downloads/Medical_Examiner-Coroner,_Full_dataset_{dnow}.csv"
     tobe = f"/home/ray/scc_coroner/coroner_data_{dnow}.csv"
 
@@ -227,6 +224,9 @@ if __name__ == '__main__':
         url = 'https://data.sccgov.org/Health/Medical-Examiner-Coroner-Full-dataset/s3fb-yrjp/about_data'
 
         download(url)
+
+        dnow = dt.now().strftime('%Y%m%d')
+        print(f"dnow: {dnow}")
 
         file = move_dload_file(dnow)
 
